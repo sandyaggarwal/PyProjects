@@ -1,8 +1,9 @@
 class Car:
-    def __init__(self, color: str, type: str, make: int):
+    def __init__(self, color: str, type: str, make: int, name: str = 'merc'):
         self.color = color
         self.type = type
         self.make = make
+        self.__car_name = name
         print(f'''Your car details :
               color {self.color}
               type {self.type}
@@ -28,4 +29,5 @@ merc: Car = Car('grey', 'sedan', 2024)
 # audi: Car = Car('white', 'sedan', 2023)
 
 # vehicle = merc + audi
-print(merc)
+merc.__car_name = 'Audi'
+print(merc.__car_name)
