@@ -1,4 +1,4 @@
-class Polynomial:
+class Polygon:
     __width = None
     __height = None
 
@@ -15,7 +15,7 @@ class Polynomial:
         return self.__height
 
 
-class Rectangle(Polynomial):
+class Rectangle(Polygon):
     def __init__(self):
         super().__init__()
 
@@ -25,7 +25,7 @@ class Rectangle(Polynomial):
         return area
     
 
-class Traingle(Polynomial):
+class Traingle(Polygon):
     def __init__(self):
         super().__init__()
 
