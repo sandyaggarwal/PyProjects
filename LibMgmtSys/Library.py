@@ -6,7 +6,7 @@ class Library:
         self.books: list[Book] = []
     
     def add_book(self, book: Book):
-        self.Books.append(book)
+        self.books.append(book)
             
     def remove_book(self, book: Book):
         self.books.pop(book)
