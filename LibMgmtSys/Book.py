@@ -10,8 +10,9 @@ class Book:
     
     def get_is_borrowed(self) -> bool:
         return self.__is_borrowed
+    
+    def __str__(self):
+        return (f'(Book(TItle:{self.title}, Author:{self.author},'
+                f'ISBN:{self.isbn}))')
 
-       
-# famous_five: Book = Book('Famous Five', 'Unknown', '9234879237')
-# famous_five.set_is_borrowed(True)
-# print(f'Book {famous_five.title} status {famous_five.get_is_borrowed()}')   
+
