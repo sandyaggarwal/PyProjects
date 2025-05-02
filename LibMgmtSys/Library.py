@@ -17,4 +17,5 @@ class Library:
     def return_book(self, book: Book):
         book.set_is_borrowed(False)
         
-        
+    def list_books(self) -> list[Book]:
+        return self.Books  
