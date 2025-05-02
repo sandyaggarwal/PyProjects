@@ -16,12 +16,12 @@ class Book:
     def set_borrowed_by(self, name: str):
         self.__borrowed_by = name
 
-    def get_borrowed_by(self, isbn: str) -> str:
+    def get_borrowed_by(self) -> str:
         return self.__borrowed_by
 
     def __str__(self):
         return (f'Book(TItle:{self.title}, Author:{self.author},'
                 f'ISBN:{self.isbn},'
-                f'Borrowed: {"Yes" if self.__is_borrowed else "No"}'
+                f'Borrowed: {"Yes" if self.__is_borrowed else "No"}, '
                 f'Borrowed By:'
-                f'{self.get_borrowed_by if self.__is_borrowed else None})')
+                f'{self.get_borrowed_by() if self.__is_borrowed else None})')
