@@ -12,7 +12,8 @@ class Library:
         self.books.pop(book)
     
     def issue_book(self, book: Book):
-        book.set_is_borrowed(True)
+        if book in self.books and not book.get_is_borrowed:
+            book.set_is_borrowed(True)
         
     def return_book(self, book: Book):
         book.set_is_borrowed(False)
