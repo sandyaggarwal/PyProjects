@@ -3,13 +3,13 @@ from Book import Book
 
 class Library:
     def __init__(self):
-        self.Books: list[Book] = []
+        self.books: list[Book] = []
     
     def add_book(self, book: Book):
         self.Books.append(book)
             
     def remove_book(self, book: Book):
-        self.Books.pop(book)
+        self.books.pop(book)
     
     def issue_book(self, book: Book):
         book.set_is_borrowed(True)
@@ -18,4 +18,8 @@ class Library:
         book.set_is_borrowed(False)
         
     def list_books(self) -> list[Book]:
-        return self.Books  
+        if not self.books:
+            print('No book available!')
+        for book in self.books:
+            print(book)
+        return self.books # noqa
