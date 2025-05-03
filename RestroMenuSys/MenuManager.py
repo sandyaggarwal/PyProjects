@@ -22,8 +22,16 @@ class MenuManager:
         print(f"\nItem {menu_item.name} successfully removed from Menu!!!\n")
         return True
 
-    def show_menu(self, category: str = None):
-        ...
+    def show_menu(self, category: str = None) -> bool:
+        if not self.menu_items:
+            print("\nNo Item is available in Menu currently!!!\n")
+            return False
+        print("\n==================================\n")
+        print("\t\tMenu\t\t")
+        print("\n==================================\n")
+        for item in self.menu_items.values():
+            print(f"{item.item_code}\t\t{item.name}\t\t{item.get_price()}")
+        return True
 
     def update_item_price(self, item_code: str, new_price: float) -> bool:
         if item_code not in self.menu_items:
@@ -31,6 +39,7 @@ class MenuManager:
             return False
         menu_item: MenuItem = self.menu_items[item_code]
         menu_item.set_price(new_price)
+        self.menu_items[item_code] = menu_item
         print(f"\nPrice {new_price} for Item {menu_item.name} is"
               "successfully updated!!!\n")
         return True
