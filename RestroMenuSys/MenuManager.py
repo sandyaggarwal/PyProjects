@@ -13,8 +13,14 @@ class MenuManager:
         print(f"\nItem: {menu_item.name} added to Menu!!!\n")
         return True
 
-    def remove_menu_item():
-        ...
+    def remove_menu_item(self, item_code: str):
+        if item_code not in self.menu_items:
+            print(f'\nItem: {item_code} not in Menu!!!\n')
+            return False
+        menu_item = self.menu_items[item_code]
+        del self.menu_items[item_code]
+        print(f"\nItem {menu_item.name} successfully removed from Menu!!!\n")
+        return True
 
     def list_menu():
         ...
