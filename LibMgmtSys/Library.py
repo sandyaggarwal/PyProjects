@@ -24,17 +24,19 @@ class Library:
     def issue_book(self, book: Book, user: User):
         if book.isbn not in self.books:
             print('Book not found in catalogue')
-            return
+            return False
         if user.mobile_no not in self.users:
             print('User not added to system, add user first!')
-            return
+            return False
         library_book = self.books[book.isbn]
         if not library_book.get_is_borrowed():
             library_book.set_is_borrowed(True)
             library_book.set_borrowed_by(user.mobile_no)
             print(f'Book: ({library_book.title}) issued to User {user.name}')
+            return True
         else:
             print(f'Book: ({library_book.title}) cant be issued')
+            return False
 
     def return_book(self, book: Book):
         library_book = self.books[book.isbn]
