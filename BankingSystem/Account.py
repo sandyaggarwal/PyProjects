@@ -1,6 +1,7 @@
 import random
 from InsufficientBalanceError import InsufficientBalanceError
 
+
 class Account:
     def __init__(self, account_name: str, initial_balance: float):
         self.account_number = random.randint(100000, 999999)
