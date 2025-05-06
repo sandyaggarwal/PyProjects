@@ -1,22 +1,12 @@
 import random
-from datetime import datetime
 
 
 class Account:
-    def __init__(self):
+    def __init__(self, account_name: str, initial_balance: float):
         self.account_number = random.randint(100000, 999999)
-        # self.account_owner
-        self.balance: float = self.balance
-        self.creation_date = datetime.now()
+        self.account_name: str = account_name
+        self.balance: float = initial_balance
 
-    def deposit():
-        ...
-
-    def withdraw():
-        ...
-
-    def get_balance():
-        ...
-
-    def get_transaction_history():
-        ...
+    def __str__(self):
+        return f"\n ********Account Details******** \nName: {self.account_name}\nAcctNumber:"\
+               f"{self.account_number} \nBalance: {self.balance:.2f}"
